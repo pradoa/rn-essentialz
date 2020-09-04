@@ -1,6 +1,6 @@
 {
   "name": "rn-essentialz",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Essential components for React Native apps.",
   "main": "dist/index.js",
   "author": "Adrian Prado",

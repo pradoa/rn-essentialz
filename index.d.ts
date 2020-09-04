@@ -17,4 +17,12 @@ declare module 'rn-essentialz' {
             style?: RnViewStyleProp | Array<RnViewStyleProp>;
         }
     }
+
+    /**
+     * Essential Button
+     * 
+     * An easy-to-use button component, completely
+     * customizable for any situation.
+     */
+    export class Button extends React.Component<RNEssentials.Button, any> { }
 }
