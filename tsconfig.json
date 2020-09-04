@@ -1,0 +1,22 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": [
+      "es2017",
+    ],
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": "src",
+    "target": "esnext",
+  },
+  "include": [
+    "src/**/*"
+  ],
+}
