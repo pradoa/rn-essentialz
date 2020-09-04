@@ -1,15 +1,15 @@
 {
-  "name": "rn-essentials",
+  "name": "rn-essentialz",
   "version": "0.0.1",
   "description": "Essential components for React Native apps.",
   "main": "dist/index.js",
   "author": "Adrian Prado",
   "license": "MIT",
   "private": false,
-  "homepage": "https://github.com/pradoa/rn-essentials",
-  "bugs": "https://github.com/pradoa/rn-essentials/issues",
+  "homepage": "https://github.com/pradoa/rn-essentialz",
+  "bugs": "https://github.com/pradoa/rn-essentialz/issues",
   "repository": {
-    "url": "https://github.com/pradoa/rn-essentials",
+    "url": "https://github.com/pradoa/rn-essentialz",
     "type": "git"
   },
   "scripts": {
