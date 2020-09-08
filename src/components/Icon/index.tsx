@@ -1,42 +1,41 @@
 import React from 'react';
 import { Text, StyleProp, TextStyle } from 'react-native';
 import { RNEssentialz } from 'rn-essentialz';
+import {
+    parseIconFromClassName,
+    IconTypes,
+} from './Icon';
 
 interface IState {
 }
 
-export default class Title extends React.Component<RNEssentialz.Title, IState> {
-    constructor(props: RNEssentialz.Title) {
+export default class Icon extends React.Component<RNEssentialz.Icon, IState> {
+    constructor(props: RNEssentialz.Icon) {
         super(props);
     }
 
     getDefaultStyleProp(defaultValue: any, values: any[]) {
         let value = defaultValue;
-        const { level } = this.props;
-
-        if (level > 0) {
-            value = values.length >= level ? values[level - 1] : value;
-        }
-
         return value;
     }
 
     getDefaultTextStyle() {
-        const { style } = this.props;
+        const { style, type, size } = this.props;
 
         return {
-            color: '#333',
-            fontSize: this.getDefaultStyleProp(16, [32, 28, 24, 20, 16, 12]),
-            fontWeight: '700',
-            marginBottom: 20,
+            fontSize: size ? size : 12,
             ...style as any,
+            fontFamily: IconTypes[type],
         } as StyleProp<TextStyle>;
     }
 
     render() {
-        const { children } = this.props;
+        const { children, name } = this.props;
 
         const defaultTextStyle = this.getDefaultTextStyle();
+
+        const parsedIconBefore: any = parseIconFromClassName(name);
+        const parsedIcon: any = parseIconFromClassName(name, true);
 
         return (
             <Text
@@ -44,7 +43,7 @@ export default class Title extends React.Component<RNEssentialz.Title, IState> {
                     ...defaultTextStyle as any
                 }}
             >
-                {children}
+                {parsedIcon}
             </Text>
         );
     }

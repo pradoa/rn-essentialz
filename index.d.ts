@@ -1,3 +1,5 @@
+import { GestureResponderEvent } from "react-native";
+
 declare module 'react-native-sync-localstorage';
 declare module 'rn-essentialz' {
     import * as React from "react";
@@ -36,6 +38,32 @@ declare module 'rn-essentialz' {
              * Define button as full width.
              */
             fullWidth?: boolean;
+			/**
+             * Define button as loading state.
+             */
+            loading?: boolean;
+        }
+
+        /**
+         * Icon component for React Native
+         */
+        interface Icon extends ReactNative.TextProps {
+			/**
+             * Defines title style
+             */
+            style?: RnTextStyleProp | Array<RnTextStyleProp>;
+			/**
+             * Sets the type of the Icon
+             */
+            type: "fal" | "far" | "fas" | "fab" | "fad";
+            /**
+             * The Icon's name
+             */
+            name: string;
+            /**
+             * The Icon's size (overrides style's size)
+             */
+            size?: number;
         }
 
         /**
@@ -94,6 +122,14 @@ declare module 'rn-essentialz' {
      * customizable for any situation.
      */
     export class Button extends React.Component<RNEssentialz.Button, any> { }
+
+    /**
+     * Essential Icon
+     * 
+     * An easy-to-use icon component.
+     * Using FontAwesome v5.14.0.
+     */
+    export class Icon extends React.Component<RNEssentialz.Icon, any> { }
 
     /**
      * Essential Select
