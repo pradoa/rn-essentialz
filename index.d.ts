@@ -109,6 +109,14 @@ declare module 'rn-essentialz' {
              * Set the level of the title
              */
             level: number;
+			/**
+             * Set the weight of the title
+             */
+            light?: boolean;
+			/**
+             * Set title centered
+             */
+            centered?: boolean;
         }
     }
 

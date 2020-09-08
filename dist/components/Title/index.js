@@ -13,13 +13,14 @@ export default class Title extends React.Component {
         return value;
     }
     getDefaultTextStyle() {
-        const { style } = this.props;
+        const { style, light, centered } = this.props;
         return {
             color: '#333',
             fontSize: this.getDefaultStyleProp(16, [32, 28, 24, 20, 16, 12]),
-            fontWeight: '700',
+            fontWeight: light ? '300' : '700',
             marginBottom: 20,
             ...style,
+            textAlign: centered ? 'center' : 'auto',
         };
     }
     render() {
