@@ -2,7 +2,18 @@ import React from 'react';
 import { View, TouchableOpacity, Text, StyleProp, ViewStyle, TextStyle } from 'react-native';
 import { RNEssentialz } from 'rn-essentialz';
 
-export default class Button extends React.Component<RNEssentialz.Button> {
+interface IState {
+    selectOpen: boolean;
+}
+
+export default class Select extends React.Component<RNEssentialz.Select, IState> {
+    constructor(props: RNEssentialz.Select) {
+        super(props);
+
+        this.state = {
+            selectOpen: false
+        };
+    }
 
     getDefaultStyleProp(defaultValue: any, smallValue: any, largeValue: any) {
         let value = defaultValue;

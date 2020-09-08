@@ -1,6 +1,7 @@
 {
   "name": "rn-essentialz",
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "licenses": [],
   "description": "Essential components for React Native apps.",
   "main": "dist/index.js",
   "author": "Adrian Prado",
@@ -24,6 +25,7 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-native": "^0.63.2"
+    "react-native": "^0.63.2",
+    "react-native-sync-localstorage": "^0.0.3"
   }
 }

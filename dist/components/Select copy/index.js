@@ -1,6 +1,12 @@
 import React from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
-export default class Button extends React.Component {
+export default class Select extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectOpen: false
+        };
+    }
     getDefaultStyleProp(defaultValue, smallValue, largeValue) {
         let value = defaultValue;
         const { small, large } = this.props;
