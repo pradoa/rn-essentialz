@@ -42,6 +42,20 @@ declare module 'rn-essentialz' {
         }
 
         /**
+         * Col component for React Native
+         */
+        interface Col extends ReactNative.ViewProps {
+			/**
+             * Defines col style
+             */
+            style?: RnViewStyleProp | Array<RnViewStyleProp>;
+			/**
+             * Set the size of the column
+             */
+            size: number;
+        }
+
+        /**
          * Icon component for React Native
          */
         interface Icon extends ReactNative.TextProps {
@@ -64,34 +78,49 @@ declare module 'rn-essentialz' {
         }
 
         /**
-         * Select component for React Native
+         * Row component for React Native
          */
-        interface Select extends ReactNative.TouchableOpacityProps {
+        interface Row extends ReactNative.ViewProps {
 			/**
-             * Defines select style
+             * Defines row style
              */
             style?: RnViewStyleProp | Array<RnViewStyleProp>;
 			/**
+             * Set the spacing between columns
+             */
+            spacing?: number;
+        }
+
+
+        /**
+         * Select component for React Native
+         */
+        interface Select extends ReactNative.TouchableOpacityProps {
+            /**
+             * Defines select style
+             */
+            style?: RnViewStyleProp | Array<RnViewStyleProp>;
+            /**
              * Defines select text ttyle
              */
             textStyle?: RnTextStyleProp | Array<RnTextStyleProp>;
-			/**
+            /**
              * Set an icon for the select
              */
             icon?: React.ReactComponentElement<any, any>;
-			/**
+            /**
              * Define select as small
              */
             small?: boolean;
-			/**
+            /**
              * Define select as large. overrides small property.
              */
             large?: boolean;
-			/**
+            /**
              * Define select as full width.
              */
             fullWidth?: boolean;
-			/**
+            /**
              * Define the value of the select.
              */
             value?: any;
@@ -101,19 +130,19 @@ declare module 'rn-essentialz' {
          * Title component for React Native
          */
         interface Title extends ReactNative.TextProps {
-			/**
+            /**
              * Defines title style
              */
             style?: RnTextStyleProp | Array<RnTextStyleProp>;
-			/**
+            /**
              * Set the level of the title
              */
             level: number;
-			/**
+            /**
              * Set the weight of the title
              */
             light?: boolean;
-			/**
+            /**
              * Set title centered
              */
             centered?: boolean;
@@ -129,12 +158,28 @@ declare module 'rn-essentialz' {
     export class Button extends React.Component<RNEssentialz.Button, any> { }
 
     /**
+     * Essential Col
+     * 
+     * An easy-to-use row component, completely
+     * customizable for any situation.
+     */
+    export class Col extends React.Component<RNEssentialz.Col, any> { }
+
+    /**
      * Essential Icon
      * 
      * An easy-to-use icon component.
      * Using FontAwesome v5.14.0.
      */
     export class Icon extends React.Component<RNEssentialz.Icon, any> { }
+
+    /**
+     * Essential Row
+     * 
+     * An easy-to-use row component, completely
+     * customizable for any situation.
+     */
+    export class Row extends React.Component<RNEssentialz.Row, any> { }
 
     /**
      * Essential Select
