@@ -1,6 +1,6 @@
 {
   "name": "rn-essentialz",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "licenses": [],
   "description": "Essential components for React Native apps.",
   "main": "dist/index.js",
@@ -26,6 +26,6 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-native": "^0.63.2",
-    "react-native-sync-localstorage": "^0.0.3"
+    "react-native-flash-message": "^0.1.16"
   }
 }

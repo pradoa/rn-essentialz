@@ -1,6 +1,3 @@
-import { GestureResponderEvent } from "react-native";
-
-declare module 'react-native-sync-localstorage';
 declare module 'rn-essentialz' {
     import * as React from "react";
     import * as ReactNative from "react-native";
@@ -146,4 +143,51 @@ declare module 'rn-essentialz' {
      * customizable for any situation.
      */
     export class Title extends React.Component<RNEssentialz.Title, any> { }
+
+    /**
+     * Essential With Messages
+     * 
+     * Used to render an app interface with messages component.
+     * Use this to enroll your main app component to use
+     * messages anywhere.
+     */
+    export class WithMessages extends React.Component<any, any> { }
+
+
+    export type Position = "top" | "bottom" | "center" | { top?: number, left?: number, bottom?: number, right?: number };
+    export type MessageType = "none" | "default" | "info" | "success" | "danger" | "warning";
+    export interface MessageOptions {
+        animated?: boolean;
+        animationDuration?: number;
+        backgroundColor?: string;
+        autoHide?: boolean;
+        color?: string;
+        description?: string;
+        duration?: number;
+        floating?: boolean;
+        hideOnPress?: boolean;
+        hideStatusBar?: boolean;
+        icon?: Icon;
+        message: string;
+        position?: Position;
+        textStyle?: RnTextStyleProp;
+        titleStyle?: RnTextStyleProp;
+        type?: MessageType;
+        onPress?(): void;
+        onLongPress?(): void;
+    }
+    /**
+     * Essential Notification Message
+     * 
+     * Use to notify the app with text or even
+     * images. 
+     */
+    export const showNotification: (options: MessageOptions) => void;
+    /**
+     * Essential Notification Message
+     *
+     * Use to hide notification message in the
+     * app.
+     */
+    export const hideNotification: () => void;
 }
