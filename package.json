@@ -1,6 +1,6 @@
 {
   "name": "rn-essentialz",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "licenses": [],
   "description": "Essential components for React Native apps.",
   "main": "dist/index.js",
