@@ -11,6 +11,7 @@ export default class FadeAnimation extends React.Component {
         let { type, time, delay } = this.props;
         const { animateValue } = this.state;
         Animated.timing(animateValue, {
+            useNativeDriver: true,
             toValue: type === "in" ? 1 : 0,
             duration: time ? time : 2000,
             easing: Easing.inOut(Easing.quad)

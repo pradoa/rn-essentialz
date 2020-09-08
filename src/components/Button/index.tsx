@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { View, Text, StyleProp, ViewStyle, TextStyle, TouchableWithoutFeedback } from 'react-native';
-import { RNEssentialz, Icon } from 'rn-essentialz';
-import SpinAnimation from 'rn-essentialz/src/animations/spin';
+import React from 'react';
+import { View, Text, StyleProp, ViewStyle, TextStyle, TouchableWithoutFeedback, GestureResponderEvent } from 'react-native';
+import { Icon } from '../../';
+import SpinAnimation from '../../animations/spin';
+import { RNEssentialz } from 'rn-essentialz';
 
 interface IState {
     touched: boolean;

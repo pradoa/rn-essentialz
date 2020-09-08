@@ -17,6 +17,7 @@
     "target": "esnext",
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "index.d.ts"
   ],
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableWithoutFeedback } from 'react-native';
-import { Icon } from 'rn-essentialz';
-import SpinAnimation from 'rn-essentialz/src/animations/spin';
+import { Icon } from '../../';
+import SpinAnimation from '../../animations/spin';
 export default class Button extends React.Component {
     constructor(props) {
         super(props);

@@ -11,6 +11,7 @@ export default class SlideAnimation extends React.Component {
         let { toValue, time, delay } = this.props;
         const { animateValue } = this.state;
         Animated.timing(animateValue, {
+            useNativeDriver: true,
             toValue: toValue ? toValue : 0,
             duration: time ? time : 2000,
             easing: Easing.inOut(Easing.quad)
