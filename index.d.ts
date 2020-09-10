@@ -89,6 +89,10 @@ declare module 'rn-essentialz' {
              * Set the spacing between columns
              */
             spacing?: number;
+            /**
+             * Set children cols centered
+             */
+            centered?: boolean;
         }
 
 
