@@ -18,11 +18,12 @@ export default class Col extends React.Component<RNEssentialz.Col, IState> {
         const finalSpacing = halfSpacing / 2;
 
         return {
-            width: `${size}%`,
-            padding: halfSpacing,
-            marginTop: finalSpacing * -1,
-            marginBottom: finalSpacing * - 1,
             ...style as any,
+            width: `${size}%`,
+            paddingLeft: halfSpacing,
+            paddingRight: halfSpacing,
+            paddingTop: halfSpacing,
+            paddingBottom: halfSpacing,
         } as StyleProp<ViewStyle>;
     }
 

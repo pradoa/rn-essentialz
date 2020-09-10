@@ -20,7 +20,7 @@ export default class Row extends React.Component<RNEssentialz.Row, IState> {
             width: '100%',
             display: 'flex',
             flexDirection: 'row',
-            alignItems: 'space-between',
+            alignItems: 'center',
             justifyContent: 'flex-start',
             flexWrap: 'wrap',
             ...style as any,

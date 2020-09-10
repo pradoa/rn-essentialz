@@ -31,7 +31,7 @@ export default class Button extends React.Component {
         return {
             backgroundColor: `rgba(49,49,49,1)`,
             padding: this.getDefaultStyleProp(20, 12, 20),
-            width: fullWidth ? 'auto' : this.getDefaultStyleProp(275, 200, 350),
+            width: fullWidth ? '100%' : this.getDefaultStyleProp(275, 200, 350),
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',

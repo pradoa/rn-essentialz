@@ -11,11 +11,12 @@ export default class Col extends React.Component {
         const halfSpacing = defaultSpacing / 2;
         const finalSpacing = halfSpacing / 2;
         return {
-            width: `${size}%`,
-            padding: halfSpacing,
-            marginTop: finalSpacing * -1,
-            marginBottom: finalSpacing * -1,
             ...style,
+            width: `${size}%`,
+            paddingLeft: halfSpacing,
+            paddingRight: halfSpacing,
+            paddingTop: halfSpacing,
+            paddingBottom: halfSpacing,
         };
     }
     render() {
