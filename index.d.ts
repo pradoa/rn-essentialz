@@ -151,6 +151,61 @@ declare module 'rn-essentialz' {
              */
             centered?: boolean;
         }
+
+        /**
+         * Animations
+         */
+
+        /**
+         * Spin Animation component for React Native
+         */
+        interface SpinAnimation extends ReactNative.ViewProps {
+            /**
+             * time of full animation. the time that animation
+             * takes to finish, or to repeate once if its looped.
+             */
+            time: number;
+        }
+        /**
+         * Fade Animation component for React Native
+         */
+        interface FadeAnimation extends ReactNative.ViewProps {
+            /**
+             * time of full animation. the time that animation
+             * takes to finish, or to repeate once if its looped.
+             */
+            time: number;
+            /**
+             * defines animation delay
+             */
+            delay: number;
+            /**
+             * defines fade in or fade out
+             */
+            type: "in" | "out";
+        }
+        /**
+         * Slide Animation component for React Native
+         */
+        interface SlideAnimation extends ReactNative.ViewProps {
+            /**
+             * time of full animation. the time that animation
+             * takes to finish, or to repeate once if its looped.
+             */
+            time: number;
+            /**
+             * defines animation delay
+             */
+            delay: number;
+            /**
+             * defines initial value for animation
+             */
+            fromValue: number;
+            /**
+             * defines end value for animation
+             */
+            toValue: number;
+        }
     }
 
     /**
@@ -247,4 +302,13 @@ declare module 'rn-essentialz' {
      * app.
      */
     export const hideNotification: () => void;
+
+
+
+    /**
+     * Essential Animations
+     */
+    export class SpinAnimation extends React.Component<RNEssentialz.SpinAnimation, any> { }
+    export class FadeAnimation extends React.Component<RNEssentialz.FadeAnimation, any> { }
+    export class SlideAnimation extends React.Component<RNEssentialz.SlideAnimation, any> { }
 }
