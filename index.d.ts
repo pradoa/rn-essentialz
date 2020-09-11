@@ -134,10 +134,23 @@ declare module 'rn-essentialz' {
          * Tabs component for React Native
          */
         interface Tabs extends ReactNative.ViewProps {
+            children: React.ReactElement<Tab>[];
             /**
              * Defines tabs style
              */
             style?: RnViewStyleProp | Array<RnViewStyleProp>;
+            /**
+             * Set current tab id
+             */
+            current?: string;
+            /**
+             * Set callback for tab change
+             */
+            onTabChange?: (newTabId: string) => void;
+            /**
+             * Set tab header filling all space
+             */
+            fullWidth?: boolean;
         }
 
         /**
@@ -148,6 +161,14 @@ declare module 'rn-essentialz' {
              * Defines tabs style
              */
             style?: RnViewStyleProp | Array<RnViewStyleProp>;
+            /**
+             * Set tab title
+             */
+            title?: string;
+            /**
+             * Set tab id
+             */
+            id: string;
         }
 
         /**
