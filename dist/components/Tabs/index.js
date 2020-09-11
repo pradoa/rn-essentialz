@@ -9,9 +9,11 @@ export default class Tabs extends React.Component {
         return {
             padding: 0,
             width: '100%',
+            height: '100%',
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'flex-end',
             flexWrap: 'wrap',
             ...style,
         };
@@ -41,6 +43,13 @@ export default class Tabs extends React.Component {
         return {
             fontSize: 16,
             textAlign: 'center'
+        };
+    }
+    getDefaultChildrenWrapperStyle() {
+        return {
+            width: '100%',
+            height: 'auto',
+            flexGrow: 1,
         };
     }
     renderChildren() {
@@ -80,10 +89,13 @@ export default class Tabs extends React.Component {
     }
     render() {
         const defaultStyle = this.getDefaultStyle();
+        const defaultCWStyle = this.getDefaultChildrenWrapperStyle();
         return (React.createElement(View, { style: {
                 ...defaultStyle
             } },
             this.renderTabs(),
-            this.renderChildren()));
+            React.createElement(View, { style: {
+                    ...defaultCWStyle
+                } }, this.renderChildren())));
     }
 }

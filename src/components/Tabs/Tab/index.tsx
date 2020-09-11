@@ -17,9 +17,8 @@ export default class Tab extends React.Component<RNEssentialz.Tab, IState> {
             padding: 0,
             width: '100%',
             display: 'flex',
+            flex: 1,
             flexDirection: 'row',
-            alignItems: 'center',
-            flexWrap: 'wrap',
             ...style as any,
         } as StyleProp<ViewStyle>;
     }

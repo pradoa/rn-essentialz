@@ -16,9 +16,11 @@ export default class Tabs extends React.Component<RNEssentialz.Tabs, IState> {
         return {
             padding: 0,
             width: '100%',
+            height: '100%',
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'flex-end',
             flexWrap: 'wrap',
             ...style as any,
         } as StyleProp<ViewStyle>;
@@ -52,6 +54,14 @@ export default class Tabs extends React.Component<RNEssentialz.Tabs, IState> {
             fontSize: 16,
             textAlign: 'center'
         } as StyleProp<TextStyle>;
+    }
+
+    getDefaultChildrenWrapperStyle() {
+        return {
+            width: '100%',
+            height: 'auto',
+            flexGrow: 1,
+        } as StyleProp<ViewStyle>;
     }
 
     renderChildren() {
@@ -113,6 +123,7 @@ export default class Tabs extends React.Component<RNEssentialz.Tabs, IState> {
     render() {
 
         const defaultStyle = this.getDefaultStyle();
+        const defaultCWStyle = this.getDefaultChildrenWrapperStyle();
 
         return (
             <View
@@ -121,7 +132,13 @@ export default class Tabs extends React.Component<RNEssentialz.Tabs, IState> {
                 }}
             >
                 {this.renderTabs()}
-                {this.renderChildren()}
+                <View
+                    style={{
+                        ...defaultCWStyle as any
+                    }}
+                >
+                    {this.renderChildren()}
+                </View>
             </View>
         );
     }
