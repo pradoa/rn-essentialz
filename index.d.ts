@@ -131,6 +131,26 @@ declare module 'rn-essentialz' {
         }
 
         /**
+         * Tabs component for React Native
+         */
+        interface Tabs extends ReactNative.ViewProps {
+            /**
+             * Defines tabs style
+             */
+            style?: RnViewStyleProp | Array<RnViewStyleProp>;
+        }
+
+        /**
+         * Tab component for React Native
+         */
+        interface Tab extends ReactNative.ViewProps {
+            /**
+             * Defines tabs style
+             */
+            style?: RnViewStyleProp | Array<RnViewStyleProp>;
+        }
+
+        /**
          * Title component for React Native
          */
         interface Title extends ReactNative.TextProps {
@@ -255,6 +275,22 @@ declare module 'rn-essentialz' {
      * customizable for any situation.
      */
     export class Title extends React.Component<RNEssentialz.Title, any> { }
+
+    /**
+     * Essential Tabs
+     * 
+     * An easy-to-use tabs component, completely
+     * customizable for any situation.
+     */
+    export class Tabs extends React.Component<RNEssentialz.Tabs, any> { }
+
+    /**
+     * Essential Tab
+     * 
+     * An easy-to-use tabs tab component, completely
+     * customizable for any situation.
+     */
+    export class Tab extends React.Component<RNEssentialz.Tab, any> { }
 
     /**
      * Essential With Messages

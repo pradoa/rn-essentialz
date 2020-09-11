@@ -3,6 +3,8 @@ export { default as Col } from './components/Col';
 export { default as Icon } from './components/Icon';
 export { default as Row } from './components/Row';
 export { default as Select } from './components/Select';
+export { default as Tabs } from './components/Tabs';
+export { default as Tab } from './components/Tabs/Tab';
 export { default as Title } from './components/Title';
 export { default as WithMessages, showNotification, hideNotification } from './components/Messages';
 

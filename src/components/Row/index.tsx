@@ -11,7 +11,7 @@ export default class Row extends React.Component<RNEssentialz.Row, IState> {
     }
 
     getDefaultStyle() {
-        const { style, spacing } = this.props;
+        const { style, spacing, centered } = this.props;
         let defaultSpacing = spacing ? spacing : 10;
         const halfSpacing = defaultSpacing / 2;
 
@@ -21,7 +21,7 @@ export default class Row extends React.Component<RNEssentialz.Row, IState> {
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'flex-start',
+            justifyContent: centered ? 'center' : 'flex-start',
             flexWrap: 'wrap',
             ...style as any,
         } as StyleProp<ViewStyle>;
@@ -48,9 +48,9 @@ export default class Row extends React.Component<RNEssentialz.Row, IState> {
 
         if (Array.isArray(children)) {
             return React.Children.map(children, (c: any, i) =>
-                React.cloneElement(c, {
+                c ? React.cloneElement(c, {
                     parentElement: this,
-                })
+                }) : c
             );
         }
 
