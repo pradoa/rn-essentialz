@@ -1,6 +1,6 @@
 {
   "name": "rn-essentialz",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "licenses": [],
   "description": "Essential components for React Native apps.",
   "main": "dist/index.js",
@@ -16,7 +16,8 @@
   "scripts": {
     "watch-ts": "tsc --watch",
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc",
+    "install": "react-native link ./assets"
   },
   "devDependencies": {
     "@types/react": "^16.9.49",
