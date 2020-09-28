@@ -29,7 +29,7 @@
     "watch-ts": "tsc --watch",
     "test": "jest",
     "build": "tsc",
-    "install": "react-native link ./assets"
+    "install": "react-native link"
   },
   "devDependencies": {
     "@types/react": "^16.9.49",
