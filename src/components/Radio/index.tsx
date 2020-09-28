@@ -82,7 +82,6 @@ export default class Radio extends React.Component<RNEssentialz.Radio, IState> {
                             ...defaultTextStyle as any
                         }}
                     >
-                        {}
                         {typeof children === "string" ? (children as string).toUpperCase() : null}
                     </Text>
                 </View>
