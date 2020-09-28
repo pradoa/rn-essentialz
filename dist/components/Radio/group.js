@@ -17,14 +17,12 @@ export default class RadioGroup extends React.Component {
     getDefaultStyle() {
         const { fullWidth } = this.props;
         return {
-            backgroundColor: `rgba(49,49,49,1)`,
-            padding: this.getDefaultStyleProp(20, 12, 20),
-            width: fullWidth ? 'auto' : this.getDefaultStyleProp(275, 200, 350),
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
+            padding: 0,
+            width: fullWidth ? '100%' : this.getDefaultStyleProp(275, 200, 350),
+            flexDirection: 'column',
             borderRadius: this.getDefaultStyleProp(5, 5, 5),
+            borderColor: `rgba(49,49,49,1)`,
+            borderWidth: 2,
         };
     }
     renderChildren() {
@@ -34,6 +32,7 @@ export default class RadioGroup extends React.Component {
         if (Array.isArray(children)) {
             return React.Children.map(children, (c, i) => c ? React.cloneElement(c, {
                 parentElement: this,
+                firstElement: i === 0
             }) : c);
         }
         return children;

@@ -24,48 +24,53 @@ export default class Radio extends React.Component<RNEssentialz.Radio, IState> {
     }
 
     getDefaultStyle() {
+        const firstElement = (this as any).props.firstElement;
+        const parentElement = (this as any).props.parentElement;
+        const parentElementProps = (parentElement.props) as RNEssentialz.RadioGroup;
+        const selected = parentElementProps.value === this.props.value;
+
         return {
-            backgroundColor: `rgba(49,49,49,1)`,
+            backgroundColor: selected ? `rgba(49,49,49,1)` : `transparent`,
             padding: this.getDefaultStyleProp(20, 12, 20),
             width: '100%',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            flexDirection: 'row',
-            borderRadius: this.getDefaultStyleProp(5, 5, 5),
+            flexDirection: 'column',
+            borderRadius: 0,
+            borderBottomColor: `rgba(49,49,49,1)`,
+            borderTopWidth: firstElement ? 0 : 2,
         } as StyleProp<ViewStyle>;
     }
 
     getDefaultTextStyle() {
         const { textStyle } = this.props;
+        const parentElement = (this as any).props.parentElement;
+        const parentElementProps = (parentElement.props) as RNEssentialz.RadioGroup;
+        const selected = parentElementProps.value === this.props.value;
 
         return {
-            color: '#fff',
+            color: selected ? `#fff` : `rgba(49,49,49,1)`,
             fontSize: this.getDefaultStyleProp(16, 12, 20),
             fontWeight: '600',
             ...textStyle as any,
         } as StyleProp<TextStyle>;
     }
 
-    getDefaultIconStyle() {
-        const { textStyle } = this.props;
-
-        return {
-            color: '#fff',
-            marginRight: 10,
-            ...textStyle as any,
-        } as StyleProp<TextStyle>;
-    }
-
     render() {
-        const { children, onPress, onPressIn, onPressOut } = this.props;
+        const { children } = this.props;
+        const parentElement = (this as any).props.parentElement;
+        if (!parentElement) return null;
 
         const defaultStyle = this.getDefaultStyle();
         const defaultTextStyle = this.getDefaultTextStyle();
 
         return (
             <TouchableOpacity
-                {...{ onPress, onPressIn, onPressOut }}
+                onPress={(e) => {
+                    const parentElementProps = (parentElement.props) as RNEssentialz.RadioGroup;
+                    return parentElementProps.onChange ? parentElementProps.onChange(this.props.value) : null;
+                }}
             >
                 <View
                     style={{

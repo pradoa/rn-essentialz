@@ -17,39 +17,46 @@ export default class Radio extends React.Component {
         return value;
     }
     getDefaultStyle() {
+        const firstElement = this.props.firstElement;
+        const parentElement = this.props.parentElement;
+        const parentElementProps = (parentElement.props);
+        const selected = parentElementProps.value === this.props.value;
         return {
-            backgroundColor: `rgba(49,49,49,1)`,
+            backgroundColor: selected ? `rgba(49,49,49,1)` : `transparent`,
             padding: this.getDefaultStyleProp(20, 12, 20),
             width: '100%',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            flexDirection: 'row',
-            borderRadius: this.getDefaultStyleProp(5, 5, 5),
+            flexDirection: 'column',
+            borderRadius: 0,
+            borderBottomColor: `rgba(49,49,49,1)`,
+            borderTopWidth: firstElement ? 0 : 2,
         };
     }
     getDefaultTextStyle() {
         const { textStyle } = this.props;
+        const parentElement = this.props.parentElement;
+        const parentElementProps = (parentElement.props);
+        const selected = parentElementProps.value === this.props.value;
         return {
-            color: '#fff',
+            color: selected ? `#fff` : `rgba(49,49,49,1)`,
             fontSize: this.getDefaultStyleProp(16, 12, 20),
             fontWeight: '600',
             ...textStyle,
         };
     }
-    getDefaultIconStyle() {
-        const { textStyle } = this.props;
-        return {
-            color: '#fff',
-            marginRight: 10,
-            ...textStyle,
-        };
-    }
     render() {
-        const { children, onPress, onPressIn, onPressOut } = this.props;
+        const { children } = this.props;
+        const parentElement = this.props.parentElement;
+        if (!parentElement)
+            return null;
         const defaultStyle = this.getDefaultStyle();
         const defaultTextStyle = this.getDefaultTextStyle();
-        return (React.createElement(TouchableOpacity, Object.assign({}, { onPress, onPressIn, onPressOut }),
+        return (React.createElement(TouchableOpacity, { onPress: (e) => {
+                const parentElementProps = (parentElement.props);
+                return parentElementProps.onChange ? parentElementProps.onChange(this.props.value) : null;
+            } },
             React.createElement(View, { style: {
                     ...defaultStyle
                 } },

@@ -115,6 +115,10 @@ declare module 'rn-essentialz' {
              * Define button as full width.
              */
             fullWidth?: boolean;
+            /**
+             * Define on change action
+             */
+            onChange?: (value: any) => void;
         }
 
         /**

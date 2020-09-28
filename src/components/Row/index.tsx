@@ -32,7 +32,7 @@ export default class Row extends React.Component<RNEssentialz.Row, IState> {
         let defaultSpacing = spacing ? spacing : 10;
 
         return {
-            width: 'auto',
+            width: '100%',
             marginLeft: defaultSpacing * -1,
             marginRight: defaultSpacing * -1,
             marginTop: defaultSpacing * -1,

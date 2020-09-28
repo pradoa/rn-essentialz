@@ -1,6 +1,6 @@
 {
   "name": "rn-essentialz",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Essential components for React Native apps.",
   "main": "dist/index.js",
   "author": "Adrian Prado",
@@ -13,11 +13,12 @@
     "type": "git"
   },
   "keywords": [
+    "android",
+    "ios",
     "react",
     "react-native",
     "react native",
-    "essential",
-    "essencial",
+    "native components",
     "components",
     "ui",
     "interface",
