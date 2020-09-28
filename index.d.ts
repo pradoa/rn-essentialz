@@ -11,31 +11,31 @@ declare module 'rn-essentialz' {
          * Button component for React Native
          */
         interface Button extends ReactNative.TouchableOpacityProps {
-			/**
+            /**
              * Defines button style
              */
             style?: RnViewStyleProp | Array<RnViewStyleProp>;
-			/**
-             * Defines button text ttyle
+            /**
+             * Defines button text style
              */
             textStyle?: RnTextStyleProp | Array<RnTextStyleProp>;
-			/**
+            /**
              * Set an icon for the button
              */
             icon?: React.ReactComponentElement<any, any>;
-			/**
+            /**
              * Define button as small
              */
             small?: boolean;
-			/**
+            /**
              * Define button as large. overrides small property.
              */
             large?: boolean;
-			/**
+            /**
              * Define button as full width.
              */
             fullWidth?: boolean;
-			/**
+            /**
              * Define button as loading state.
              */
             loading?: boolean;
@@ -45,11 +45,11 @@ declare module 'rn-essentialz' {
          * Col component for React Native
          */
         interface Col extends ReactNative.ViewProps {
-			/**
+            /**
              * Defines col style
              */
             style?: RnViewStyleProp | Array<RnViewStyleProp>;
-			/**
+            /**
              * Set the size of the column
              */
             size: number;
@@ -59,11 +59,11 @@ declare module 'rn-essentialz' {
          * Icon component for React Native
          */
         interface Icon extends ReactNative.TextProps {
-			/**
+            /**
              * Defines title style
              */
             style?: RnTextStyleProp | Array<RnTextStyleProp>;
-			/**
+            /**
              * Sets the type of the Icon
              */
             type: "fal" | "far" | "fas" | "fab" | "fad";
@@ -78,14 +78,54 @@ declare module 'rn-essentialz' {
         }
 
         /**
+         * Radio Buttons component for React Native
+         */
+        interface Radio extends ReactNative.TouchableOpacityProps {
+            /**
+             * Defines radio button style
+             */
+            style?: RnViewStyleProp | Array<RnViewStyleProp>;
+            /**
+             * Defines button text style
+             */
+            textStyle?: RnTextStyleProp | Array<RnTextStyleProp>;
+            /**
+             * Set the value of radio option
+             */
+            value: any;
+        }
+
+        /**
+         * Radio Group component for React Native
+         */
+        interface RadioGroup extends ReactNative.ViewProps {
+            /**
+             * Defines radio group style
+             */
+            style?: RnViewStyleProp | Array<RnViewStyleProp>;
+            /**
+             * Defines radio group size
+             */
+            size: "default" | "small" | "large";
+            /**
+             * Set the value of selected radio item
+             */
+            value: any;
+            /**
+             * Define button as full width.
+             */
+            fullWidth?: boolean;
+        }
+
+        /**
          * Row component for React Native
          */
         interface Row extends ReactNative.ViewProps {
-			/**
+            /**
              * Defines row style
              */
             style?: RnViewStyleProp | Array<RnViewStyleProp>;
-			/**
+            /**
              * Set the spacing between columns
              */
             spacing?: number;
@@ -94,7 +134,6 @@ declare module 'rn-essentialz' {
              */
             centered?: boolean;
         }
-
 
         /**
          * Select component for React Native
@@ -272,6 +311,22 @@ declare module 'rn-essentialz' {
      * Using FontAwesome v5.14.0.
      */
     export class Icon extends React.Component<RNEssentialz.Icon, any> { }
+
+    /**
+     * Essential Radio
+     * 
+     * An easy-to-use radio buttons component, completely
+     * customizable for any situation.
+     */
+    export class Radio extends React.Component<RNEssentialz.Radio, any> { }
+
+    /**
+     * Essential Radio Group
+     * 
+     * An easy-to-use radio group component, completely
+     * customizable for any situation.
+     */
+    export class RadioGroup extends React.Component<RNEssentialz.RadioGroup, any> { }
 
     /**
      * Essential Row

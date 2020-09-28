@@ -58,7 +58,6 @@ export default class Tabs extends React.Component {
             return null;
         if (Array.isArray(children)) {
             return React.Children.map(children, (c, i) => {
-                console.log(c);
                 const selected = current && current === c.props.id ? true : false;
                 return (selected && c ? React.cloneElement(c, {
                     parentElement: this,
@@ -78,7 +77,6 @@ export default class Tabs extends React.Component {
             return null;
         if (Array.isArray(children)) {
             return (React.createElement(View, { style: this.getDefaultTabWrapperStyle() }, React.Children.map(children, (c, i) => {
-                console.log(c);
                 const selected = current && current === c.props.id ? true : false;
                 return c ? (React.createElement(TouchableWithoutFeedback, { onPress: () => this.changeTab(c.props.id) },
                     React.createElement(View, { style: this.getDefaultTabStyle(selected) },

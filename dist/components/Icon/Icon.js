@@ -11,11 +11,11 @@ const parseIconFromClassName = (iconName, dualTone) => {
         return;
     iconName = iconName.replace(/(fa\-)/gi, '');
     iconName = iconName.replace(/(fa|fas|far|fal)( )/gi, '');
-    let nameParts = iconName.match(/(\-)(\w{1,1})/gi) || [];
-    nameParts.forEach(m => {
-        iconName = iconName.replace(m, m.toUpperCase());
-    });
-    iconName = iconName.replace(/\-/gi, '');
+    // let nameParts = iconName.match(/(\-)(\w{1,1})/gi) || []
+    // nameParts.forEach(m => {
+    //   iconName = iconName.replace(m, m.toUpperCase())
+    // })
+    //iconName = iconName.replace(/\-/gi, '')
     iconName = (iconName || '').trim();
     return dualTone ? DualToneIcons[iconName] : Icons[iconName];
 };

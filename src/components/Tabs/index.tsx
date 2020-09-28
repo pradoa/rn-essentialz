@@ -71,7 +71,6 @@ export default class Tabs extends React.Component<RNEssentialz.Tabs, IState> {
 
         if (Array.isArray(children)) {
             return React.Children.map(children, (c: any, i) => {
-                console.log(c);
                 const selected = current && current === c.props.id ? true : false;
                 return (selected && c ? React.cloneElement(c, {
                     parentElement: this,
@@ -98,7 +97,6 @@ export default class Tabs extends React.Component<RNEssentialz.Tabs, IState> {
                 <View style={this.getDefaultTabWrapperStyle()}>
                     {
                         React.Children.map(children, (c: React.ReactElement<RNEssentialz.Tab>, i) => {
-                            console.log(c);
                             const selected = current && current === c.props.id ? true : false;
                             return c ? (
                                 <TouchableWithoutFeedback onPress={() => this.changeTab(c.props.id)}>

@@ -1,7 +1,6 @@
 {
   "name": "rn-essentialz",
-  "version": "0.0.18",
-  "licenses": [],
+  "version": "0.0.19",
   "description": "Essential components for React Native apps.",
   "main": "dist/index.js",
   "author": "Adrian Prado",
@@ -13,6 +12,19 @@
     "url": "https://github.com/pradoa/rn-essentialz",
     "type": "git"
   },
+  "keywords": [
+    "react",
+    "react-native",
+    "react native",
+    "essential",
+    "essencial",
+    "components",
+    "ui",
+    "interface",
+    "visual",
+    "default",
+    "basic"
+  ],
   "scripts": {
     "watch-ts": "tsc --watch",
     "test": "jest",

@@ -22,13 +22,12 @@ export default class Row extends React.Component {
     getDefaultWrapperStyle() {
         const { spacing } = this.props;
         let defaultSpacing = spacing ? spacing : 10;
-        const halfSpacing = defaultSpacing / 2;
         return {
-            width: '100%',
-            marginLeft: halfSpacing * -1,
-            marginRight: halfSpacing * -1,
-            marginTop: halfSpacing * -1,
-            marginBottom: halfSpacing * -1,
+            width: 'auto',
+            marginLeft: defaultSpacing * -1,
+            marginRight: defaultSpacing * -1,
+            marginTop: defaultSpacing * -1,
+            marginBottom: defaultSpacing * -1,
         };
     }
     renderChildren() {
